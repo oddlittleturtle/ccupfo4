@@ -7,5 +7,5 @@ Scripted fixes available:
   * Virgil no longer aggros
   * Gunner's Pip-boy Perk is removed from player upon quest completion
 
-# Permissions
-Do not redistribute source or compiled scripts without modifying them. Do not redistribute in whole or in part as part of a collection or mod pack.
+# License
+Create pull request. Do not redistribute source or compiled scripts. Do not redistribute in whole or in part as part of a collection or mod pack.
