@@ -8,4 +8,4 @@ Scripted fixes available:
   * Gunner's Pip-boy Perk is removed from player upon quest completion
 
 # License
-Create pull request. Do not redistribute source or compiled scripts. Do not redistribute in whole or in part as part of a collection or mod pack.
+Do not redistribute in whole or in part as part of a collection or mod pack.
