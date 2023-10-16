@@ -1,4 +1,4 @@
-# ccupfo4
+# Creation Club Unofficial Patch - Fallout 4
 Repository for Creation Club Unofficial Patch issue tracking and source scripts
 
 Scripted fixes available:
