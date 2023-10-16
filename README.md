@@ -3,6 +3,7 @@ Repository for Creation Club Unofficial Patch issue tracking and source scripts
 
 Scripted fixes available:
 
+## Tesla Cannon Creation
   * Virgil no longer aggros
   * Gunner's Pip-boy Perk is removed from player upon quest completion
 
