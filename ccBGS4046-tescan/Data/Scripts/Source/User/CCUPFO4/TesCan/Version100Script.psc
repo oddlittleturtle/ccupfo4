@@ -7,43 +7,52 @@ EndGroup
 
 Group BestOfThree_Fixes
 	Quest Property ccBGSFO4046_BestOfThree Auto Const
+	{autofill}
 	Perk Property ccBGSFO4046_GunnerPipboyPerk Auto Const
+	{autofill}
 EndGroup
 
 
 Group Virgil_Aggro_Fix
 	ReferenceAlias Property Virgil Auto Const
+	{autofill}
 	Quest Property DN053 Auto Const
+	{autofill}
 	Faction Property DN053_VirgilFaction Auto Const
+	{autofill}
 	Location Property VirgilsLabLocation Auto Const
+	{autofill}
 EndGroup
 
 
 Function Process()
+	Actor Player = Game.GetPlayer()
 
-	;bug # 000000 - Magic cloak effect knocks Virgil out of his friendly Faction
+	;issue # 1 - Magic cloak effect knocks Virgil out of his friendly Faction
 	bool DN053SuicideStageDone = DN053.IsStageDone(40) ; Virgil's suicide stage
 	bool CCPipboyInspectStage = ccBGSFO4046_BestOfThree.IsStageDone(6) ; stage that directs player to pick up gunner's pipboy
 
-	if (Game.GetPlayer().IsInLocation(VirgilsLabLocation))
-		if ( CCPipboyInspectStage && !DN053SuicideStageDone )
-			; force him into his faction if he's out of it and hasn't gone suicidal
+	if (Player.IsInLocation(VirgilsLabLocation) && !DN053SuicideStageDone)
+		if (CCPipboyInspectStage)
+			;make sure he's in his faction
 			Virgil.GetActorReference().AddToFaction(DN053_VirgilFaction)
 			
-			; remind him that you can hit him if you're in his faction
+			;calm him down if necessary
+			Virgil.GetActorReference().StopCombatAlarm()
+			
+			;remind him that you're allowed to hit him
 			Virgil.GetReference().IgnoreFriendlyHits(true)
 		endif
 	endif
 
-
-	;bug # 000001 - Gunner Pipboy Perk does not remove from player upon quest completion
-	if ( ccBGSFO4046_BestOfThree.IsCompleted() )
-		if Game.GetPlayer().HasPerk(ccBGSFO4046_GunnerPipboyPerk)
-			Game.GetPlayer().RemovePerk(ccBGSFO4046_GunnerPipboyPerk)
+	;issue # 2 - Gunner Pipboy Perk does not remove from player upon quest completion
+	if (ccBGSFO4046_BestOfThree.IsCompleted())
+		if Player.HasPerk(ccBGSFO4046_GunnerPipboyPerk)
+			Player.RemovePerk(ccBGSFO4046_GunnerPipboyPerk)
 		endif
 	endif
 	
-	debug.trace(self + " CCUPFO4 1.0.0 Updates Done.")
-	Track.iVersion = 100
+	Track.fVersion = 1.00
+	debug.trace(self + " CCUPFO4 " + Track.fVersion + " Updates Done.")
 	Stop()
 EndFunction
