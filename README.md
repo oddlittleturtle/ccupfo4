@@ -1,7 +1,11 @@
 # Creation Club Unofficial Patch - Fallout 4
 Repository for Creation Club Unofficial Patch issue tracking and source scripts
 
-If there are other CC that the devs forgot to take into consideration and cause weirdness like Virgil, I'll look into them. If you see something with the scripts you want to change or find a bug with the patch, make a pull request rather than copying source scripts to a new mod or simply report the problem on the [issue tracker](https://github.com/oddlittleturtle/ccupfo4/issues) for me to look into.
+### How to report issues
+If there are other CC that the devs forgot to take into consideration and cause weirdness like Virgil, I'll look into them. If you find a bug with the patch, report the problem on the [issue tracker](https://github.com/oddlittleturtle/ccupfo4/issues) for me to look into.
+
+### How to Contribute
+If you see something with the scripts you want to change or find a bug with the patch, make a pull request rather than copying source scripts to a new mod or simply report the problem on the [issue tracker](https://github.com/oddlittleturtle/ccupfo4/issues) for me to look into.
 
 # Creations available:
   * **Tesla Cannon:**
